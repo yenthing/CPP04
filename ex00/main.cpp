@@ -1,23 +1,24 @@
 #include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimial.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const WrongAnimal* wrong_meta = new WrongAnimal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
+    const WrongAnimal* WrongAnimal = new WrongCat(); 
     std::cout << "*********************************\n";
-    std::cout << wrong_meta->getType() << " is the type of wrong_meta" << std::endl;
     std::cout << j->getType() << " is the type of j" << std::endl;
     std::cout << i->getType() << " is the type of i" << std::endl;
+    std::cout << WrongAnimal->getType() << " is the type of " << WrongAnimal->getType() << std::endl;
     std::cout << "*********************************\n";
-    meta->makeSound();
     i->makeSound(); 
     j->makeSound();
-    wrong_meta->makeSound();
+    WrongAnimal->makeSound();
     std::cout << "*********************************\n";
-    delete meta;
-    delete wrong_meta;
+    delete WrongAnimal;
     delete j;
     delete i;
     return 0;

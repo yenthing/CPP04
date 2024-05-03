@@ -1,12 +1,13 @@
 NAME = a.out
 RM	=		rm -rf
 CFLAGS = -Wall -Werror -Wextra -std=c++98 -Wshadow -pedantic -g
-SOURCES = 	main.cpp		\
-			Animal.cpp		\
-			Dog.cpp			\
-			Cat.cpp			\
+SOURCES = 	main.cpp			\
+			Animal.cpp			\
+			Dog.cpp				\
+			Cat.cpp				\
 			WrongAnimial.cpp	\
-			WrongCat.cpp
+			WrongCat.cpp		\
+			Brain.cpp
 
 CXX = c++
 OBJ = $(SOURCES:.cpp=.o)
