@@ -10,10 +10,11 @@ class Animal
 
     public:
         Animal();
-        virtual ~Animal();
+        virtual ~Animal(); //dynamic binding from runtime
         Animal(const Animal &copy);
         Animal &operator=(const Animal &copy);
 
         virtual void makeSound() const;
         std::string getType() const;
 };
+

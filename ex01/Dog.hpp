@@ -12,8 +12,9 @@ class Dog : public Animal
         Dog(const Dog &copy);
         Dog &operator=(const Dog &copy);
 
-        void makeSound() const;
         std::string getType() const;
+        Brain *getBrain() const;
+        void makeSound() const;
 
     private:
         Brain *_Brain;

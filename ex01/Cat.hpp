@@ -8,12 +8,13 @@ class Cat : public Animal
 {
     public:
         Cat();
-        virtual ~Cat();
+        ~Cat();
         Cat(const Cat &copy);
         Cat &operator=(const Cat &copy);
 
         std::string getType() const;
         void makeSound() const;
+        Brain *getBrain() const;
 
     private:
         Brain *_Brain;

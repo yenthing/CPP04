@@ -2,20 +2,31 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+#include <cassert>
 
 int main()
 {
-    const int n = 100;
-    Animal *animals[n];
-    for (int i = 0; i < n; i++)
+    Animal* animal = new Dog();
+    delete animal;
+    std::cout << "Test with/out virtual destructor passed!" << std::endl;
+    std::cout << "---------------------------------" << std::endl;
+    Dog basic;
     {
-        if (i % 2 == 0)
-            animals[i] = new Dog();
-        else
-            animals[i] = new Cat();
-        std::cout << "Sum of i " << i << std::endl;
+        Dog tmp = basic;
+        tmp.getBrain()->ideas[0] = "Modified Idea";
+        assert(basic.getBrain()->ideas[0] != tmp.getBrain()->ideas[0]);
     }
-    // for (int i = 0; i < n; i++)
-    //     delete animals[i];
+    std::cout << "---------------------------------" << std::endl;
+    Cat initial;
+    {
+        Cat tmp = initial;
+        tmp.getBrain()->ideas[0] = "Modified Idea";
+        assert(initial.getBrain()->ideas[0] != tmp.getBrain()->ideas[0]);
+    }
+    std::cout << "---------------------------------" << std::endl;
+    std::cout << "Shallow copy tests passed!" << std::endl;
+
+    std::cout << "---------------------------------" << std::endl;
+    
     return 0;
 }

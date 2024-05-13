@@ -28,6 +28,12 @@ void Animal::makeSound() const
     std::cout << "Animal sound: How does it sound?" << std::endl;
 }
 
+void Animal::printInfo() const
+{
+    std::cout << "It is a " << this->getType() << ": ";
+    this->makeSound();
+}
+
 std::string Animal::getType() const
 {
     return this->type;

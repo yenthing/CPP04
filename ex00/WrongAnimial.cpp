@@ -25,7 +25,13 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &copy)
 
 void WrongAnimal::makeSound() const
 {
-    std::cout << "This is not a correct animal sound" << std::endl;
+    std::cout << "Oe Oe : Cuz Im a wrong animal" << std::endl;
+}
+
+void WrongAnimal::printInfo() const
+{
+    std::cout << "It is a " << this->getType() << ": ";
+    this->makeSound();
 }
 
 std::string WrongAnimal::getType() const

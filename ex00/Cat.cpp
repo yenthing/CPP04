@@ -32,3 +32,9 @@ void Cat::makeSound() const
 {
     std::cout << "Moew Moew!" << std::endl;
 }
+
+void Cat::printInfo() const
+{
+    std::cout << "It is a " << this->getType() << ": ";
+    this->makeSound();
+}

@@ -3,6 +3,8 @@
 Brain::Brain()
 {
     std::cout << "Brain constructor called" << std::endl;
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = "";
 }
 
 Brain::~Brain()
@@ -12,7 +14,8 @@ Brain::~Brain()
 
 Brain::Brain(const Brain &copy)
 {
-    *this = copy;
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = copy.ideas[i];
 }
 
 Brain &Brain::operator=(const Brain &copy)
@@ -40,3 +43,4 @@ void Brain::printIdeas() const
     for (int i = 0; i < 100; i++)
         std::cout << this->ideas[i] << std::endl;
 }
+

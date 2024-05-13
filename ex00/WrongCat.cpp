@@ -25,5 +25,11 @@ WrongCat &WrongCat::operator=(const WrongCat &copy)
 
 void WrongCat::makeSound() const
 {
-    std::cout << this->type << "This is not a cat sound. Should be Moewmoew yk" << std::endl;
+    std::cout << this->type << "Im still Moew Moew -ing" << std::endl;
+}
+
+void WrongCat::printInfo() const
+{
+    std::cout << "It is a " << this->getType() << ": ";
+    this->makeSound();
 }

@@ -11,7 +11,7 @@ Dog::~Dog()
     std::cout << "Destructor Dog called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy)
+Dog::Dog(const Dog &copy) : Animal(copy)
 {
     *this = copy;
 }
@@ -31,4 +31,10 @@ std::string Dog::getType() const
 void Dog::makeSound() const
 {
     std::cout << "Woof Woof!" << std::endl;
+}
+
+void Dog::printInfo() const
+{
+    std::cout << "It is a " << this->getType() << ": ";
+    this->makeSound();
 }
